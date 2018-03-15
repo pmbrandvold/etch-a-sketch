@@ -1,12 +1,35 @@
-#gridContainer {
+#main {
+  width: 960px;
+  height: 960px;
   display: grid;
-  grid-template-columns: repeat(4, 25%);
-  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: 10% repeat(4, 4fr);
+  grid-template-columns: repeat(4, 4fr) 10%;
+  grid-template-areas: "header header header header header"
+                       "canvas canvas canvas canvas sidebar"
+                       "canvas canvas canvas canvas sidebar"
+                       "canvas canvas canvas canvas sidebar"
+                       "canvas canvas canvas canvas sidebar"
 }
 
-#gridContainer div {
-  width: 25vw;
-  height: 25vw;
+#canvas {
+  grid-area: canvas;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(4, 25%);
+}
+
+#header {
+  grid-area: header;
+  background-color: red;
+}
+
+#sidebar {
+  grid-area: sidebar;
+  background-color: yellow;
+}
+
+#canvas div {
+
 
 }
 

@@ -1,9 +1,9 @@
-const gridContainer = document.getElementById('gridContainer');
+const canvas = document.getElementById('canvas');
 
 function paintGrid() {
   for (let i = 0; i < 16; i++) {
     let div = document.createElement('div');
-    gridContainer.appendChild(div);
+    canvas.appendChild(div);
     div.addEventListener('mouseover', function() {hoverColorChange(div)});
   }
 }
