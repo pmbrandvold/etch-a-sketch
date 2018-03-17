@@ -1,6 +1,6 @@
 const canvas = document.getElementById('canvas');
 
-let gridSideLength = 100;
+let gridSideLength = 625;
 
 function paintGrid() {
   document.documentElement.style.setProperty(`--gridSize`, this.value = Math.sqrt(gridSideLength));
