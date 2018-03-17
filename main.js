@@ -1,10 +1,11 @@
 const canvas = document.getElementById('canvas');
+const newGridButton = document.getElementById('newGrid')
 
-let gridSideLength = 625;
+let gridSize = 625;
 
 function paintGrid() {
-  document.documentElement.style.setProperty(`--gridSize`, this.value = Math.sqrt(gridSideLength));
-  for (let i = 0; i < gridSideLength; i++) {
+  document.documentElement.style.setProperty(`--gridSize`, this.value = Math.sqrt(gridSize));
+  for (let i = 0; i < gridSize; i++) {
     let div = document.createElement('div');
     canvas.appendChild(div);
     div.addEventListener('mouseover', function() {hoverColorChange(div)});
@@ -19,7 +20,8 @@ function customGrid() {
   clearCurrentGrid();
   promptUser();
   paintGrid();
-  document.documentElement.style.setProperty(`--gridSize`, this.value = Math.sqrt(gridSideLength));
+  document.documentElement.style.setProperty(`--gridSize`, this.value = Math.sqrt(gridSize));
+  document.getElementById('cellCounter').innerHTML = "Current Cells in Grid: " + gridSize;
 }
 
 function promptUser() {
@@ -28,7 +30,7 @@ function promptUser() {
     alert('Please pick a square number.');
     promptUser();
   } else {
-    gridSideLength = input;
+    gridSize = input;
   }
 }
 
@@ -43,5 +45,4 @@ function clearCurrentGrid() {
 
 paintGrid();
 
-const newGridButton = document.getElementById('newGrid')
 newGridButton.addEventListener('click', customGrid);
