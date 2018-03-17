@@ -18,25 +18,11 @@ function hoverColorChange(div) {
 
 function customGrid() {
   clearCurrentGrid();
-  promptUser();
+  let input = Number(prompt('How big should the grid be?'));
+  gridSize = (input*input);
   paintGrid();
   document.documentElement.style.setProperty(`--gridSize`, this.value = Math.sqrt(gridSize));
   document.getElementById('cellCounter').innerHTML = "Current Cells in Grid: " + gridSize;
-}
-
-function promptUser() {
-  let input = Number(prompt('How big should the grid be?'));
-  input = (input*input);
-  if (!isSquare(input)) {
-    alert('Please pick a square number.');
-    promptUser();
-  } else {
-    gridSize = input;
-  }
-}
-
-function isSquare(n) {
-    return n > 1 && Math.sqrt(n) % 1 === 0;
 }
 
 function clearCurrentGrid() {
