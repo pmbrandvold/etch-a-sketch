@@ -1,12 +1,12 @@
 :root {
-  --gridSize: 8;
+  --gridSize: '';
 }
 
 #main {
-  width: 960px;
-  height: 960px;
+  width: 1000px;
+  height: 1000px;
   display: grid;
-  grid-template-rows: 10% repeat(4, 1fr);
+  grid-template-rows: 10% repeat(3, 1fr);
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas: "header header header newGrid"
                        "canvas canvas canvas canvas"
