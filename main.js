@@ -17,5 +17,5 @@ function hoverColorChange(div) {
 function customGrid() {
   playerChoice = Number(prompt('How big should the grid be?'));
   paintGrid();
-  document.documentElement.style.setProperty(`--gridColumns`, this.value = playerChoice);
+  document.documentElement.style.setProperty(`--gridSize`, this.value = Math.sqrt(playerChoice));
 }
