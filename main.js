@@ -26,6 +26,7 @@ function customGrid() {
 
 function promptUser() {
   let input = Number(prompt('How big should the grid be?'));
+  input = (input*input);
   if (!isSquare(input)) {
     alert('Please pick a square number.');
     promptUser();
