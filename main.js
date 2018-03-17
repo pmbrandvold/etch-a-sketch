@@ -16,10 +16,24 @@ function hoverColorChange(div) {
 }
 
 function customGrid() {
-  gridSideLength = Number(prompt('How big should the grid be?'));
   clearCurrentGrid();
+  promptUser();
   paintGrid();
   document.documentElement.style.setProperty(`--gridSize`, this.value = Math.sqrt(gridSideLength));
+}
+
+function promptUser() {
+  let input = Number(prompt('How big should the grid be?'));
+  if (!isSquare(input)) {
+    alert('Please pick a square number.');
+    promptUser();
+  } else {
+    gridSideLength = input;
+  }
+}
+
+function isSquare(n) {
+    return n > 1 && Math.sqrt(n) % 1 === 0;
 }
 
 function clearCurrentGrid() {
