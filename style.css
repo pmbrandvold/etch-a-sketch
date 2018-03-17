@@ -28,16 +28,13 @@
 #header {
   grid-area: header;
   background-color: lightgray;
+  text-align: center;
 }
 
 #newGrid {
   grid-area: newGrid;
   color: white;
   background-color: black;
-}
-
-#header h1 {
-  text-align: center;
 }
 
 #newGrid .button {
